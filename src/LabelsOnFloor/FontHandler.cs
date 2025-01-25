@@ -65,16 +65,10 @@ namespace LabelsOnFloor
         private int GetIndexInFontForChar(char c)
         {
             var asciiVal = (int) c;
-            if (asciiVal < 33)
-                return 0;
-
-            if (asciiVal < 97)
-                return asciiVal - 32;
-            
-            if (asciiVal < 127)
-                return asciiVal - 58;
-
-            return 0;
+            if (asciiVal < 128)
+                return asciiVal;
+            else
+                return 128 + "七乐人仓体作储儿公共冷加务区医卧厅厕厨园土圣地场圾垃多妓娱存客室宿小尸山工干幼床库御房所教料有木机材林果枪树械棉棚植毒水池洞浴火热燃牢牧物玻璃生电畜病的皮研种稻究纤维舍船色花苹草药莓藏见谒豆野钢铀间防阵院飞餐麦".IndexOf(c);
         }
     }
 }
